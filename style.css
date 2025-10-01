@@ -109,6 +109,7 @@ li {
     padding: 0;
     flex-direction: row;
     gap: 10px;
+
 }
 .ul2 > li {
     text-align: center;
@@ -119,8 +120,13 @@ li {
     
 }
 .ul2 > li > a {
+    height: 40px;
     display: block;
     text-decoration: none;
+    text-align: center;
+}
+.ul2 > li > a:hover {
+    background-color: red;
 }
 
 @media (min-width: 768px) {
