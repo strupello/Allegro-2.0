@@ -149,7 +149,12 @@ li {
     display: none;
 }
 .ul2 > li:hover > ul {
+    position: absolute;
     display: block;
+}
+article {
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
