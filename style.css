@@ -95,6 +95,13 @@ li {
 
 
 }
+main {
+    margin: 0 auto;
+    max-width: 1600px;
+    margin-top: 20px;
+    display: flex;
+
+}
 
 #menu2 {
     
@@ -156,6 +163,9 @@ article {
     max-width: 1600px;
     margin: 0 auto;
 }
+.text1 {
+    margin-left: 10px;
+}
 
 @media (min-width: 768px) {
     header {
@@ -180,10 +190,14 @@ article {
         flex-direction: row;
 
     }
+    main {
+        flex-direction: column;
+    }
     .ul3 {
         flex-direction: column;
         margin-left: 0px;
         margin-top: 0px;
+
     }
 
 }
