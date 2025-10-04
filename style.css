@@ -169,18 +169,38 @@ main {
 
 #sliders {
     margin: 0 auto;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     position: relative;
 }
 
 .slider {
     display: flex;
     flex-direction: row;
-    width: 800px;
-    margin: 0 auto;
+   
     overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 10px;
+    border-radius: var(--radius-md);
+    anchor-name: --cursor;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
 }
-
+.slider::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+.slide::scroll-marker {
+    content: '';
+    height: 1em;
+    width: 1em;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+}
+.slide::scroll-marker:target-current {
+    background-color: red;
+}
 .slider::scroll-button(right) {
     content: '';
     width: 60px;
@@ -188,24 +208,32 @@ main {
     background-image: url(img/arrow-next.png);
     border-radius: var(--radius-md);
     background-color: var(--color-primary);
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --cursor;
+    position-area: right center;
+    translate: -50%;
 }
 
 .slider::scroll-button(left) {
-    position: absolute;
     content: '';
     width: 60px;
     height: 60px;
     background-image: url(img/arrow-back.png);
     border-radius: var(--radius-md);
     background-color: var(--color-primary);
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --cursor;
+    position-area: left center;
+    translate: 50%;
+}
+.slide {
+    flex: 0 0 20em;
+    scroll-snap-align: start;
+}
+.slide img {
+    width: auto;
 }
 
 
