@@ -177,7 +177,6 @@ main {
 .slider {
     display: flex;
     flex-direction: row;
-   
     overflow: hidden;
     scroll-behavior: smooth;
     gap: 10px;
@@ -186,11 +185,13 @@ main {
     scroll-snap-type: x mandatory;
     scroll-marker-group: after;
 }
+
 .slider::scroll-marker-group {
     display: flex;
     justify-content: center;
     gap: 0.5em;
 }
+
 .slide::scroll-marker {
     content: '';
     height: 1em;
@@ -198,9 +199,11 @@ main {
     background-color: var(--color-primary);
     border-radius: 50%;
 }
+
 .slide::scroll-marker:target-current {
     background-color: red;
 }
+
 .slider::scroll-button(right) {
     content: '';
     width: 60px;
@@ -228,12 +231,14 @@ main {
     position-area: left center;
     translate: 50%;
 }
+
 .slide {
-    flex: 0 0 20em;
+    flex: 1 1 50%;
     scroll-snap-align: start;
 }
+
 .slide img {
-    width: auto;
+    width: 500px;
 }
 
 
@@ -274,6 +279,9 @@ main {
         margin-left: 0px;
         margin-top: 0px;
 
+    }
+    .slide img {
+        width: 800px;
     }
 
 }
