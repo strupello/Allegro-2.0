@@ -83,7 +83,7 @@ header {
 
 li {
     list-style-type: none;
-   
+
 }
 
 #search {
@@ -95,23 +95,21 @@ li {
 
 
 }
-main {
-    margin: 0 auto;
-    max-width: 1600px;
-    margin-top: 20px;
-    display: flex;
 
+main {
+    margin-top: 20px;
 }
 
 #menu2 {
-    
     max-width: 1600px;
     margin: 0 auto;
-    
+
+
 }
+
 .ul2 {
     display: flex;
-    margin: 0;
+    margin: 0 auto;
     margin-left: 10px;
     padding: 0;
     flex-direction: column;
@@ -119,25 +117,29 @@ main {
     font-size: var(--font-size-h5);
 
 }
-.ul2 > li {
+
+.ul2>li {
     background-color: var(--color-primary);
     height: 40px;
     width: 100px;
-   
-    
+
+
 }
-.ul2 > li > a {
+
+.ul2>li>a {
     height: 40px;
     display: block;
     text-decoration: none;
     text-align: center;
     line-height: 40px;
-    
+
 }
-.ul2 > li > a:hover {
+
+.ul2>li>a:hover {
     background-color: red;
     color: white;
 }
+
 .ul3 {
     display: flex;
     flex-direction: row;
@@ -145,27 +147,70 @@ main {
     margin-left: 102px;
     margin-top: 5px;
 }
-.ul3:first-child {
 
+
+.ul2>li>ul>li>a {
+    border-top: 1px solid #FFF;
 }
 
-.ul2 > li > ul > li > a {
-    border-top:1px solid #FFF;
-}
-.ul2 > li > ul {
+.ul2>li>ul {
     display: none;
 }
-.ul2 > li:hover > ul {
+
+.ul2>li:hover>ul {
     position: absolute;
     display: block;
 }
-article {
+
+.text1 {
     max-width: 1600px;
     margin: 0 auto;
 }
-.text1 {
-    margin-left: 10px;
+
+#sliders {
+    margin: 0 auto;
+    width: 800px;
+    position: relative;
 }
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider::scroll-button(right) {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-image: url(img/arrow-next.png);
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+}
+
+.slider::scroll-button(left) {
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-image: url(img/arrow-back.png);
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary);
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+
+
+
 
 @media (min-width: 768px) {
     header {
@@ -186,13 +231,16 @@ article {
     .nav {
         order: 3;
     }
+
     .ul2 {
         flex-direction: row;
 
     }
+
     main {
         flex-direction: column;
     }
+
     .ul3 {
         flex-direction: column;
         margin-left: 0px;
